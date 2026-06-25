@@ -1,160 +1,152 @@
 import "./App.css";
 
 function App() {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Git",
-    "Python",
-  ];
+const skills = [
+"HTML",
+"CSS",
+"JavaScript",
+"React.js",
+"Node.js",
+"Express.js",
+"MongoDB",
+"Git",
+"Python",
+"Java",
+"C",
+"C++",
+];
 
-  const projects = [
-    {
-      title: "Smart Attendance System",
-      description:
-        "A MERN stack attendance management system with student and admin dashboards.",
-    },
-    {
-      title: "Plant Disease Detection",
-      description:
-        "AI-based system that detects plant diseases using image processing.",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "A modern responsive portfolio built using React and CSS.",
-    },
-  ];
+const projects = [
+{
+title: "Smart Attendance Management System",
+description:
+"A full-stack MERN application that stores daily student attendance in MongoDB Atlas. Built using React.js, Node.js, Express.js, MongoDB, HTML, CSS, and JavaScript. Features attendance tracking, automatic daily records, attendance reset functionality, and a responsive user interface.",
+link: "https://attendance-system-frontend-78y0.onrender.com/",
+},
+{
+title: "Portable Water Test Pen",
+description:
+"An IoT-based portable device designed to analyze water quality parameters such as pH, TDS, and temperature. The system provides quick and accurate water quality testing for drinking water safety and environmental monitoring.",
+},
+{
+title: "Wearable Sweat Salt Monitor",
+description:
+"A smart wearable device that monitors salt concentration in sweat during physical activity. The system helps users track hydration levels and electrolyte balance, making it useful for athletes and health monitoring applications.",
+},
+{
+title: "Portfolio Website",
+description:
+"A modern responsive portfolio website built using React.js and CSS to showcase skills, projects, achievements, and contact information with a professional user interface.",
+},
+];
 
-  return (
-    <>
-      {/* Navbar */}
+return (
+<>
+{/* Navbar */}
+<nav className="navbar">
+<h2 className="logo">Portfolio</h2>
 
-      <nav className="navbar">
-        <h2 className="logo">Portfolio</h2>
+    <ul className="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
+  {/* Hero Section */}
+  <section id="home" className="hero">
+    <h3>Hello, I'm</h3>
 
-          <li><a href="#about">About</a></li>
+    <h1>Thanmathi H T</h1>
 
-          <li><a href="#skills">Skills</a></li>
+    <h2>Full Stack MERN Developer | EIE Student</h2>
 
-          <li><a href="#projects">Projects</a></li>
+    <p>
+      Passionate about building responsive web applications,
+      IoT solutions, and innovative engineering projects that
+      solve real-world problems.
+    </p>
 
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <button>Download Resume</button>
+  </section>
 
-      {/* Hero */}
+  {/* About Section */}
+  <section id="about" className="section">
+    <h2>About Me</h2>
 
-      <section id="home" className="hero">
+    <p>
+      I am an Electronics and Instrumentation Engineering student with a
+      strong interest in IoT, Embedded Systems and Full Stack Web Development. 
+      I enjoy building modern web applications using the MERN
+      stack and developing innovative hardware-based solutions for
+      real-world problems.
 
-        <h3>Hello, I'm</h3>
+      My areas of interest include React.js, Node.js, Express.js,
+      MongoDB, Programming, IoT, and Smart Monitoring Systems.
+    </p>
+  </section>
 
-        <h1>Thanmathi</h1>
+  {/* Skills Section */}
+  <section id="skills" className="section">
+    <h2>Skills</h2>
 
-        <h2>MERN Stack Developer</h2>
+    <div className="skills-container">
+      {skills.map((skill, index) => (
+        <div key={index} className="skill-card">
+          {skill}
+        </div>
+      ))}
+    </div>
+  </section>
 
-        <p>
-          Passionate about building responsive websites,
-          full stack applications and solving real-world problems.
-        </p>
+  {/* Projects Section */}
+  <section id="projects" className="section">
+    <h2>Projects</h2>
 
-        <button>Download Resume</button>
+    <div className="projects-container">
+      {projects.map((project, index) => (
+        <div key={index} className="project-card">
 
-      </section>
+          <h3>{project.title}</h3>
 
-      {/* About */}
+          <p>{project.description}</p>
 
-      <section id="about" className="section">
-
-        <h2>About Me</h2>
-
-        <p>
-          I am an engineering student passionate about web development,
-          full stack applications and creating modern user interfaces.
-
-          I enjoy learning new technologies and building projects that
-          solve practical problems.
-        </p>
-
-      </section>
-
-      {/* Skills */}
-
-      <section id="skills" className="section">
-
-        <h2>Skills</h2>
-
-        <div className="skills-container">
-
-          {skills.map((skill, index) => (
-
-            <div key={index} className="skill-card">
-
-              {skill}
-
-            </div>
-
-          ))}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              View Live Project →
+            </a>
+          )}
 
         </div>
+      ))}
+    </div>
+  </section>
 
-      </section>
+  {/* Contact Section */}
+  <section id="contact" className="section">
+    <h2>Contact Me</h2>
 
-      {/* Projects */}
+    <p>Email: thanmathi2006@gmail.com</p>
 
-      <section id="projects" className="section">
+    <p>Phone: +91 9443946200</p>
 
-        <h2>Projects</h2>
+    <p>Location: Tamil Nadu, India</p>
+  </section>
 
-        <div className="projects-container">
+  {/* Footer */}
+  <footer>
+    © 2026 Thanmathi H T | Built with React.js
+  </footer>
+</>
 
-          {projects.map((project, index) => (
-
-            <div key={index} className="project-card">
-
-              <h3>{project.title}</h3>
-
-              <p>{project.description}</p>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* Contact */}
-
-      <section id="contact" className="section">
-
-        <h2>Contact Me</h2>
-
-        <p>Email: thanmathi2006@gmail.com</p>
-
-        <p>Phone: +91 9443946200</p>
-
-        <p>Location: Tamil Nadu, India</p>
-
-      </section>
-
-      {/* Footer */}
-
-      <footer>
-
-        © 2026 Thanmathi | Built with React
-
-      </footer>
-    </>
-  );
+);
 }
 
 export default App;
